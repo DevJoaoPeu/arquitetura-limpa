@@ -2,8 +2,11 @@ POST http://localhost:3000/tasks/create
 Content-Type: application/json
 
 {
-    "id": "1",
-    "title": "Primeiro teste",
-    "description": "Primeira descrição",
-    "status": 3
+    "id": "2",
+    "title": "Segundo teste",
+    "description": "Segundo descrição",
+    "status": 2
 }
+
+###
+GET http://localhost:3000/tasks/find-all

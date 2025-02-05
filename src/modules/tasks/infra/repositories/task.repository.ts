@@ -10,4 +10,8 @@ export class TaskRepository implements ITaskRepository {
         await this.tasks.push(task);
         return task
     }
+
+    async findAll(): Promise<TaskEntity[]> {
+        return this.tasks;
+    }
 }

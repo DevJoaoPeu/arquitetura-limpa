@@ -3,6 +3,7 @@ import { ITaskRepository, TASK_REPOSITORY_INTERFACE } from "../../domain/reposit
 import { TaskStatusEnum } from "src/shared/enums/task-status.enum";
 import { TaskEntity } from "../../domain/entities/task.entity";
 import { ICreateTasksUseCase } from "../interfaces/create-tasks.usecases.interface";
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class CreateTaskUseCase implements ICreateTasksUseCase {
@@ -11,7 +12,8 @@ export class CreateTaskUseCase implements ICreateTasksUseCase {
         private readonly taskRepository: ITaskRepository
     ) {}
 
-    async execute(id: string, title: string, description: string, status: TaskStatusEnum): Promise<TaskEntity> {
+    async execute(title: string, description: string, status: TaskStatusEnum): Promise<TaskEntity> {
+        const id = uuidv4(); 
         const task = new TaskEntity(id, title, description, status);
         return await this.taskRepository.create(task);
     }

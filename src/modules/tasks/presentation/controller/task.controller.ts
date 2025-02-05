@@ -16,8 +16,8 @@ export class TaskController {
 
     @Post('/create')
     async createTask(@Body() createTaskDto: CreateTaskDto) {
-        const { id, title, description, status } = createTaskDto
-        const task = await this.createTaskUseCase.execute(id, title, description, status);
+        const { title, description, status } = createTaskDto
+        const task = await this.createTaskUseCase.execute(title, description, status);
 
         return task
     }

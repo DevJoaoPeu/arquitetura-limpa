@@ -2,8 +2,7 @@ POST http://localhost:3000/tasks/create
 Content-Type: application/json
 
 {
-    "id": "2",
-    "title": "Segundo teste",
+    "title": "title",
     "description": "Segundo descrição",
     "status": 2
 }

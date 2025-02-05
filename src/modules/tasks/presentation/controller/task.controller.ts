@@ -1,11 +1,13 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Inject, Post } from "@nestjs/common";
 import { CreateTaskUseCase } from "../../application/usecases/create-task.usecase";
 import { CreateTaskDto } from "../dto/create-task.dto";
+import { CREATE_TASKS_USECASE_INTERFACE, ICreateTasksUseCase } from "../../application/interfaces/create-tasks.usecases.interface";
 
 @Controller('tasks')
 export class TaskController {
     constructor(
-        private readonly createTaskUseCase: CreateTaskUseCase
+        @Inject(CREATE_TASKS_USECASE_INTERFACE)
+        private readonly createTaskUseCase: ICreateTasksUseCase
     ) {}
 
     @Post('/create')

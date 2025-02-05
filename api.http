@@ -1,0 +1,9 @@
+POST http://localhost:3000/tasks/create
+Content-Type: application/json
+
+{
+    "id": "1",
+    "title": "Primeiro teste",
+    "description": "Primeira descrição",
+    "status": 3
+}

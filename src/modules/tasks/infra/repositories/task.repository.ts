@@ -14,4 +14,8 @@ export class TaskRepository implements ITaskRepository {
     async findAll(): Promise<TaskEntity[]> {
         return this.tasks;
     }
+
+    async findOne(id: string): Promise<TaskEntity> {
+        return this.tasks.find(task => task.id === id);
+    }
 }

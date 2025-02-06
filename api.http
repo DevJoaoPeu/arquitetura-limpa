@@ -9,3 +9,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/tasks/find-all
+
+###
+GET http://localhost:3000/tasks/find-one/05b4f302-7fcf-406f-b539-350b9059f30f
+Content-Type: application/json

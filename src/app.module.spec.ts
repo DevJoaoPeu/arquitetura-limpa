@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppModule } from './app.module';   
 import { TaskModule } from './modules/tasks/task.module';
+import { AppModule } from './app.module';
 
 describe('AppModule', () => {
   let app: TestingModule;
